@@ -78,7 +78,14 @@ export const Footer = styled.footer`
 	padding: 20px 0;
 `;
 
-export const Button = styled.button`
+export const Button = styled.button`	
+	:hover {
+		color: red;
+		background: grey;
+	}
+	:focus {
+		outline: none;
+	}
 	background: transparent;
 	border: 1px solid #eee;
 	border-radius: 5px;
@@ -87,6 +94,23 @@ export const Button = styled.button`
 
 	& + & {
 		margin-left: 20px;
+	}
+
+	${props => props.selected
+		? css`
+			:hover {
+				color: black;
+				background: pink;
+			}
+			:focus {
+				outline: pink
+			}
+			background: pink;
+			box-shadow: 0 0 0 2px #ffc0cb61;
+			color: black;
+			border-color: white;
+		`
+		: null
 	}
 `
 
